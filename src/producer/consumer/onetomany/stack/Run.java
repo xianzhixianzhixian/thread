@@ -1,4 +1,4 @@
-package producer.consumer.onetomany;
+package producer.consumer.onetomany.stack;
 
 /**
  * @author: xianzhixianzhixian

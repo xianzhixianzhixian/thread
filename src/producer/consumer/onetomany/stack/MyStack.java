@@ -1,4 +1,4 @@
-package producer.consumer.onetomany;
+package producer.consumer.onetomany.stack;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,11 +13,12 @@ public class MyStack {
 
     synchronized public void push(){
         try {
-            if (list.size() == 1){
+            //if (list.size() == 1){ 这里一定要用while不能用if
+            while (list.size() == 1){
                 this.wait();
             }
             list.add("anyString="+Math.random());
-            this.notify();
+            this.notifyAll();
             System.out.println(" push="+list.size());
         } catch (Exception e) {
             e.printStackTrace();
@@ -27,14 +28,15 @@ public class MyStack {
     synchronized public String pop(){
         String returnValue = "";
         try {
-            if (list.size() == 0){
+            //if (list.size() == 0){ 这里一定要用while不能用if
+            while (list.size() == 0){
                 System.out.println("pop操作中的："+Thread.currentThread().getName()+" 线程呈wait状态");
                 this.wait();
             }
             System.out.println("pop操作中的："+Thread.currentThread().getName()+" "+System.nanoTime()+" 正在pop");
             returnValue += list.get(0);
             list.remove(0);
-            this.notify();
+            this.notifyAll();
             System.out.println("pop="+list.size());
             System.out.println("pop操作中的："+Thread.currentThread().getName()+" "+System.nanoTime()+" 完成pop");
         } catch (Exception e) {
