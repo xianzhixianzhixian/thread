@@ -13,7 +13,7 @@ public class MyStack {
 
     synchronized public void push(){
         try {
-            //if (list.size() == 1){ 这里一定要用while不能用if
+            //if (list.size() == 1){ //这里一定要用while不能用if
             while (list.size() == 1){
                 this.wait();
             }
@@ -30,7 +30,7 @@ public class MyStack {
     synchronized public String pop(){
         String returnValue = "";
         try {
-            //if (list.size() == 0){ 这里一定要用while不能用if
+            //if (list.size() == 0){ //这里一定要用while不能用if
             while (list.size() == 0){
                 System.out.println("pop操作中的："+Thread.currentThread().getName()+" 线程呈wait状态");
                 this.wait();
