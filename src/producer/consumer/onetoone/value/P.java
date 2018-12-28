@@ -1,7 +1,7 @@
-package producer.consumer.onetoone;
+package producer.consumer.onetoone.value;
 
 /**
- * 一生产者对应一消费者
+ * 一生产者对应一消费者操作值
  * @author: xianzhixianzhixian
  * @date: 2018-12-28 21:23
  */

@@ -1,4 +1,4 @@
-package producer.consumer.onetoone;
+package producer.consumer.onetoone.value;
 
 /**
  * @author: xianzhixianzhixian
