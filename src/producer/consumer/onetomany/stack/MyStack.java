@@ -18,6 +18,8 @@ public class MyStack {
                 this.wait();
             }
             list.add("anyString="+Math.random());
+            //这里由于是一个生产者，所以可以用notify()函数，因为只会唤醒消费者线程
+            //如果是多消费者，则应使用notifyAll()函数，因为notify()函数可能会唤醒同类生产者线程造成假死
             this.notifyAll();
             System.out.println(" push="+list.size());
         } catch (Exception e) {
@@ -36,6 +38,7 @@ public class MyStack {
             System.out.println("pop操作中的："+Thread.currentThread().getName()+" "+System.nanoTime()+" 正在pop");
             returnValue += list.get(0);
             list.remove(0);
+            //这里是多生产者，应使用notifyAll()函数，因为notify()函数可能会唤醒同类消费者线程造成假死
             this.notifyAll();
             System.out.println("pop="+list.size());
             System.out.println("pop操作中的："+Thread.currentThread().getName()+" "+System.nanoTime()+" 完成pop");
