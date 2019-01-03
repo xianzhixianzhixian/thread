@@ -1,7 +1,5 @@
 package pipbuffer.inputoutput;
 
-import pipbuffer.inputoutput.ReadData;
-
 import java.io.PipedReader;
 
 /**

@@ -1,8 +1,5 @@
 package pipbuffer.inputoutput;
 
-import pipbuffer.inputoutput.WriteData;
-
-import java.io.PipedOutputStream;
 import java.io.PipedWriter;
 
 /**
