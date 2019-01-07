@@ -1,4 +1,4 @@
-package join;
+package join.simpleuse;
 
 /**
  * join()方法的简单使用，join()方法的作用是等待线程对象销毁

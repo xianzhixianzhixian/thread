@@ -1,4 +1,4 @@
-package join;
+package join.simpleuse;
 
 /**
  * @author: xianzhixianzhixian
