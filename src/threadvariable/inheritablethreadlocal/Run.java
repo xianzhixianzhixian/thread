@@ -14,6 +14,7 @@ public class Run {
             Thread.sleep(5000);
             ThreadA a = new ThreadA(); //InheritableThreadLocal类可以让子线程从父类线程中取得值，在这里a是子线程
             a.start();
+            Tools.t1.set("Hello world！"); //这里main线程和子线程是同步运行的，main线程在改变值的同时子线程取得的值还是旧值
         } catch (Exception e) {
             e.printStackTrace();
         }
