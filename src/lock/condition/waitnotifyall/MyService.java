@@ -47,7 +47,7 @@ public class MyService {
             lock.lock();
             System.out.println("signalAll的时间为"+System.currentTimeMillis()
                         + " ThreadName="+Thread.currentThread().getName());
-            condition.signalAll();
+            condition.signalAll(); //这里signalAll()可以唤醒所有类型处于await状态的线程
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
