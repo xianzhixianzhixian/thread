@@ -18,7 +18,7 @@ public class MyService {
         try {
             lock.lock();
             while (hasValue){ //这里一定要用while
-                System.out.println(Thread.currentThread().getName()+"生产者等待设置值有可能连续打印多次");
+                //System.out.println(Thread.currentThread().getName()+"生产者等待设置值有可能连续打印多次");
                 condition0.await();
             }
             System.out.println(Thread.currentThread().getName()+"设置值");
@@ -35,7 +35,7 @@ public class MyService {
         try {
             lock.lock();
             while (!hasValue){ //这里一定要用while
-                System.out.println(Thread.currentThread().getName()+"消费者等待设置值有可能连续打印多次");
+                //System.out.println(Thread.currentThread().getName()+"消费者等待设置值有可能连续打印多次");
                 condition0.await();
             }
             System.out.println(Thread.currentThread().getName()+"获取值");
