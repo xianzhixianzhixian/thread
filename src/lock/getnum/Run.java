@@ -9,6 +9,7 @@ public class Run {
     public static void main(String[] args) throws Exception {
         ServiceGetHoldCount serviceGetHoldCount = new ServiceGetHoldCount();
         serviceGetHoldCount.serviceGetHoldCount1();
+        System.out.println("serviceGetHoldCount.lock.getQueueLength()"+serviceGetHoldCount.lock.getQueueLength());
 
 
 

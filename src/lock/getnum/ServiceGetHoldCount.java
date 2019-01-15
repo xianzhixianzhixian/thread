@@ -5,11 +5,13 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * getHoldCount()的使用示例
  * lock.getHoldCount()作用是查询当前线程保持锁定的个数，也就是调用lock()方法的次数
+ *
+ * 注意这里保持锁定的意思是，当前正在持有锁的线程的个数
  * @author: xianzhixianzhixian
  * @date: 2019-01-15 21:15
  */
 public class ServiceGetHoldCount {
-    private ReentrantLock lock = new ReentrantLock();
+    public ReentrantLock lock = new ReentrantLock();
     public void serviceGetHoldCount1(){
         try {
             lock.lock();
