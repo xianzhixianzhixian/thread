@@ -1,1 +1,1 @@
-方法getHoldCount()、getQueueLength()和getWaitQueueLength()区别
+方法getHoldCount()、getQueueLength()和getWaitQueueLength(Condition condition)的用法和区别
