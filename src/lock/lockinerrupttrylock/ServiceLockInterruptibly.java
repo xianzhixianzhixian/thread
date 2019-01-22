@@ -4,7 +4,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * lock.lockInterruptibly()的作用是：如果当前线程未被中断，则获取锁定，如果已被中断则出现异常
+ * lock.lockInterruptibly()的作用是：如果当前线程未被中断，则获取锁定(需要等待别的线程释放锁才行)，如果已被中断则出现异常
  * @author: xianzhixianzhixian
  * @date: 2019-01-21 21:09
  */
