@@ -30,7 +30,7 @@ public class RunServiceLockInterruptibly {
         Thread threadC = new Thread(runnable1);
         threadC.setName("C");
         threadC.start();
-        threadC.interrupt(); //此处中断threadB线程，看看结果会怎么样，不会出现异常，使用的是lock.lockInterruptibly()方法
+        threadC.interrupt(); //此处中断threadC线程，看看结果会怎么样，会出现异常，使用的是lock.lockInterruptibly()方法
         System.out.println("main end");
     }
 }

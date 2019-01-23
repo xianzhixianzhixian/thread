@@ -14,6 +14,6 @@ public class MyThreadB extends Thread {
 
     @Override
     public void run() {
-        service.testMethod();
+        service.notifyMethod();
     }
 }
