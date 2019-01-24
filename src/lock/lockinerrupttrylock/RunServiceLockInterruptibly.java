@@ -26,7 +26,12 @@ public class RunServiceLockInterruptibly {
         Thread threadB = new Thread(runnable0);
         threadB.setName("B");
         threadB.start();
-        threadB.interrupt(); //此处中断threadB线程，看看结果会怎么样，不会出现异常，使用的是lock.lock()方法
+        /**
+         * 此处中断threadB线程，看看结果会怎么样，不会出现异常，使用的是lock.lock()方法。
+         * 为什么B线程interrupt之后还能执行lock end B呢，因为仅仅靠thread.interrupt()是无法中断线程的，需要结合抛异常使用
+         * 才行，"异常法终止线程运行"。
+         */
+        threadB.interrupt();
         Thread threadC = new Thread(runnable1);
         threadC.setName("C");
         threadC.start();
