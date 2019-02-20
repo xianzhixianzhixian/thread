@@ -13,7 +13,7 @@ Timer类中的cancel()方法的作用是将任务队列中的全部任务清空
 
 schedule(TimerTask task, long delay)的作用
 <br/>
-以当前时间为参考，在此时间基础上延迟指定时间的毫秒数后执行一次TimerTabke任务
+以当前时间为参考，在此时间基础上延迟指定时间的毫秒数后执行一次TimerTask任务
 
 schedule(TimerTask task, Date firstTime, long period)的作用
 <br/>
