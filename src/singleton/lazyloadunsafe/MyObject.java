@@ -14,9 +14,12 @@ public class MyObject {
         try {
             if (myObject != null) {
             } else {
-                //模拟在创建对象之前做一些准备性工作
-                Thread.sleep(3000);
-                myObject = new MyObject();
+                //在这里加上和不加上synchronized代码块都是无法实现多线程单例模式的
+                synchronized (MyObject.class) {
+                    //模拟在创建对象之前做一些准备性工作
+                    Thread.sleep(3000);
+                    myObject = new MyObject();
+                }
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
